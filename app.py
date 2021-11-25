@@ -11,6 +11,8 @@ import pyrebase
 
 app = Flask(__name__)
 api = Api(app)
+firebase = pyrebase.initialize_app(creds.FIREBASE_CREDS)
+db = firebase.database()
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1@localhost/singlepayer'
 # db = SQLAlchemy(app)
 
@@ -177,6 +179,6 @@ if __name__ == '__main__':
 	#app.secret_key = os.urandom(24)
 	# db.create_all()
 
-	firebase = pyrebase.initialize_app(creds.FIREBASE_CREDS)
-	db = firebase.database()
+	# firebase = pyrebase.initialize_app(creds.FIREBASE_CREDS)
+	# db = firebase.database()
 	app.run(debug=True)

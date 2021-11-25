@@ -92,3 +92,6 @@ urllib3==1.25.10
 virtualenv==20.1.0
 virtualenvwrapper-win==1.2.6
 Werkzeug==1.0.1
+
+
+procfile web: gunicorn app:app
