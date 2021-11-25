@@ -1,0 +1,94 @@
+/*
+1. venv\Scripts\activate   
+2. python app.py
+
+//Linux
+source venv/bin/activate
+python app.py
+
+3. To freeze requirements = pip freeze > requirements.txt
+
+--
+Here is the link to the OneDrive folder where the excel file is stored online and allowed to interact with MS Graph API: https://singlepayercost-my.sharepoint.com/personal/jacob_singlepayercost_onmicrosoft_com/_layouts/15/onedrive.aspx
+The account name is  jacob@singlepayercost.onmicrosoft.com and the password is SinglePayer@721
+----
+
+--
+To get id of files in one drive - 
+login using Jacob Account and then goto inderive section
+https://developer.microsoft.com/en-us/graph/graph-explorer
+--
+
+
+--
+pip install -r requirements.txt
+--
+
+====
+questions
+    SP Plan - C3
+    HH Premium - C4
+    Timeframe - C5
+    Employer premium contribution - C6
+    or, Type of Work - C7
+    OOP spending last year - C8
+    OOP last year -- long-term care - C9
+    Household size - C10
+    Household annual income - C11
+    Deductible - C12
+    Share of cost hospital - C13
+    $ or % - C14
+    Annual OOP cap - C15
+    Email - C16
+    Permission to save answers - C17
+
+
+    params = { spPlan: 'California Single Payer (SB 562, 2018)', hpPremium: '3600', timeframe: 'Per Year', epc: '7500', typeOfWork: '', oop: '850', oopLongTerm: '0', householdSize: '2', householdIncome: '125000', deductible: '2000', shareOfCostHospital: '10', shareOfCostHospitalType: '%', annualOop: '7000' };
+
+//when user submits - 
+ 1. check consent and Email
+ 2. (a)If consent given -> store input data and retrieve uId
+	(b)Send uId also to recieve from response
+	(c)If resposnse in 200 -> update results
+			|-> Update couldn't fetch results
+
+	(b) Don't do anything, just proceed...
+
+
+a SQLAlchemy.create_all() and SQLAlchemy.drop_all() methods to create and drop tables according to the models.
+
+
+//MySql DB
+singlePayer@123
+*/
+
+aniso8601==8.0.0
+appdirs==1.4.4
+bcrypt==3.2.0
+certifi==2020.6.20
+cffi==1.14.3
+chardet==3.0.4
+click==7.1.2
+cryptography==3.4.7
+distlib==0.3.1
+fabric==2.5.0
+Fabric3==1.14.post1
+filelock==3.0.12
+Flask==1.1.2
+Flask-RESTful==0.3.8
+idna==2.10
+invoke==1.4.1
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+paramiko==2.7.2
+pycparser==2.20
+PyNaCl==1.4.0
+pytz==2020.1
+requests==2.24.0
+six==1.15.0
+termcolor==1.1.0
+urllib3==1.25.10
+virtualenv==20.1.0
+virtualenvwrapper-win==1.2.6
+Werkzeug==1.0.1

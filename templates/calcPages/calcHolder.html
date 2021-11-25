@@ -1,0 +1,40 @@
+<div class="container main-container">
+    <!-- Modal -->
+    <div class="modal fade" id="addInfoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: left;">
+            ...
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <form >
+        <div class="row justify-content-md-center">
+            <div class="col-lg-10 col-sm-12 text-center calc-holder">
+                 <!--Progress Bar-->
+                 <div id="progress_conatiner"> <div id="myProgress"> <div id="myBar" style="width: 25px;"></div></div><br><span id="progress_percentage">9% Complete</span> </div>
+
+                 <!--Slides Container-->
+                 <div class="slides_container">
+                    {% include 'calcPages/slides.html' %}
+                </div>
+            </div>
+
+            <!--Result slides holder-->
+            <div class="col-lg-12 col-sm-12 results-holder" style="display: none;">
+                <div class="results_container">
+                    {% include 'calcPages/results.html' %}
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    
+    
+    
+    
+    
+    
+

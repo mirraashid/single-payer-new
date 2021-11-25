@@ -1,0 +1,100 @@
+
+<div class="row result-panel" id="result_1">
+    <div class="col-md-12" style="margin-top:20px;padding: 20px;text-align:center">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <table class="table table-bordered" style="font-size: 1.4em;">
+                    <thead>
+                      <tr>
+                        <th scope="col">What you pay</th>
+                        <th scope="col">Last Year</th>
+                        <th scope="col">Medical Crisis</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Current insurance</th>
+                        <td class="red-background" id="currentInsuranceLastYear_out"></td>
+                        <td class="red-background" id="currentInsuranceWmc_out"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Single payer</th>
+                        <td class="green-background" id="spLastYear_out"></td>
+                        <td class="green-background" id="spWmc_out"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Difference</th>
+                        <td class="yellow-background" id="savingsLastYear_out"></td>
+                        <td class="yellow-background" id="savingsWmc_out"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-md-12" style="text-align:center">
+                <div class="btn cust-warning-btn m-2" onclick="displayResultPanel('result_2')">
+                    See Detailed Charts
+                </div>
+                <div class="btn cust-warning-btn m-2" onclick="displayResultPanel('result_3')">
+                    View all inputs
+                </div>
+            </div>
+        </div>
+
+        
+    
+      </div>
+</div>
+
+
+
+<div class="row result-panel" id="result_2" style="display:none">
+    <div class="row justify-content-md-center">
+        <div class="col-md-12 chart-conatiner" id="chart-conatiner" style="text-align: center;margin-top:70px">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="width:100%">
+                        <canvas id="canvas1"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="width:100%">
+                        <canvas id="canvas2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="text-align:center">
+            <div class="btn cust-warning-btn" onclick="displayResultPanel('result_1')">
+                Back
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center result-panel" id="result_3" style="display:none">
+        <div class="col-md-10" id="ci-container">
+            <table class="table table-bordered" style="font-size: 1.4em; text-align: center;">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="3">Inputs</th>
+                  </tr>
+                </thead>
+                <tbody id="ci_table_body">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-12" style="text-align:center">
+            <div class="btn cust-warning-btn" onclick="displayResultPanel('result_1')">
+                Back
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn cust-primary-btn" style="width: auto;" onclick="handleRecalculation()">
+            Modify inputs & re-calculate
+        </div>
+    </div>
+</div>

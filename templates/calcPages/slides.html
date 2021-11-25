@@ -1,0 +1,337 @@
+<!--Slide 1-->
+
+<div class="row " id="slide_1">
+    <div class="col-md-12 text-center">
+        <span class="question-font"> What single payer bill would you like to use for these calculations?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_1" /> 
+        <br/><br/>
+        <h4 class="font-italic"> Select one</h4>
+
+        <div class="row" style="margin-top:50px;"> 
+            <div class="col-md-12 col-xs-12"> 
+                <label> 
+                    <div class="radio-div"> 
+                        <p> <input type="radio" name="spPlan" value="California Single Payer (SB 562, 2018)">
+                            California Single Payer (SB 562, 2018)</p>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-12 col-xs-12"> 
+                <label> 
+                    <div class="radio-div"> 
+                        <p> <input type="radio" name="spPlan" value="U.S. Medicare for All (SB 1384)">
+                            U.S. Medicare for All (SB 1384)</p>
+                    </div>
+                </label> 
+            </div>
+            <div class="col-md-12 col-xs-12"> 
+                <label> 
+                    <div class="radio-div"> 
+                        <p> <input type="radio" name="spPlan" value="SPFTB-US-v1">
+                            SPFTB-US-v1</p>
+                    </div>
+                </label> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Slide 2-->
+<div class="row" id="slide_2" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font"> Now we’ll ask a few questions
+            about your medical spending last
+            year, cost-sharing, and income. </span> <br/><br/>
+
+        <h4 class="font-italic"> All answers are confidential --
+            we won’t share with anyone.</h4>                                
+    </div>
+</div>
+
+
+<!--Slide 3-->
+<div class="row " id="slide_3" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font"> How much did your household spend on health insurance premiums last year? </span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_3" /> 
+        <br/><br/>
+        <h4 class="font-italic"> You don’t have to be exact – rounding to the nearest $100 is fine.</h4>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-8 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-8">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please type your answer here" id="hpPremium">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label>Timeframe</label>
+                      <select class="form-control" id="timeframe">
+                        <option selected value="Per Year">Per Year</option>
+                        <option value="Per Month">Per Month</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Slide 4-->
+<div class="row " id="slide_4" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">How much did your employer contribute to your premiums last year?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_4" /> 
+        <br/><br/>
+
+        <h4 class="font-italic"> Click the green question mark to find this information on your W-2.</h4>
+        <h4 class="font-italic">Or <strong>estimate</strong> the amount.</h4>
+        <h4 class="font-italic">Don’t know? that’s ok! Just click “I don’t know”, report your type of work, and we’ll estimate for you.</h4>
+
+        <div class="row justify-content-md-center" id="epcInputHolder" style="margin-top:50px;"> 
+            <div class="col-md-8 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-8">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please type your answer here" id="epc">
+                    </div>
+                    <div class="form-group col-4">
+                        <label>&nbsp</label>
+                        <select class="form-control" id="epcTimeFrame">
+                        <option value="yearly" selected>Yearly</option>
+                        <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="btn cust-secondary-btn" onclick="handleEpcHide()">I don't know</div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center" id="epcDropHolder" style="margin-top:50px;display: none;"> 
+            <div class="col-md-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-12">
+                        <label>Are you a part of any union</label>
+                        <select class="form-control" id="typeOfWork">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Slide 5-->
+<div class="row " id="slide_5" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">What was your out-of-pocket spending on healthcare last year?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_5" /> 
+
+        <br/><br/>
+        <h4 class="font-italic"> Out-of-pocket spending means any spending beyond your premium, including deductibles, co-pays, and uncovered care for - </h4>
+        <h4 class="font-italic">Doctors, hospital stays, emergencies, medicines, dental vision, lab tests and xrays, counseling, etc (long-term care is on the next page)</h4><br/><br/>
+        <h4 class="font-italic">You don’t have to be exact – rounding to the nearest $100 is fine.</h4>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please input your answer here" id="oop">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Slide 6-->
+<div class="row " id="slide_6" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">What was your out-of-pocket spending on <u>long-term care</u> last year?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_6" /> 
+        <br/><br/>
+
+        <h4 class="font-italic"> Out-of-pocket spending for long-term care includes any payment, aside from premiums, such as monthly cost-sharing</h4>
+        <h4 class="font-italic">You don’t have to be exact – rounding to the nearest $100 is fine.</h4>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please input your answer here" id="oopLongTerm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Slide 7-->
+<div class="row " id="slide_7" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">How many people live in your household?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_7" /> 
+        <br/><br/>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please input your answer here" id="householdSize">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Slide 8-->
+<div class="row " id="slide_8" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">What is your household’s annual income? </span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_8" /> 
+        <br/><br/>
+
+        <h4 class="font-italic">You don’t have to be exact – approximate value is OK.</h4>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please input your answer here" id="householdIncome">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Slide 9-->
+<div class="row " id="slide_9" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">What is your family’s deductible?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_9" /> 
+        <br/><br/>
+
+        <h4 class="font-italic">This is the amount you pay for covered health care services before your insurance plan starts to pay. For example, with a $2,000 deductible, you pay the first $2,000 of covered services yourself. </h4>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                      <label>&nbsp</label>
+                      <input type="text" class="form-control" placeholder="please input your answer here" id="deductible">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Slide 10-->
+<div class="row " id="slide_10" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">What is your family’s share of cost for hospital stays?</span>
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_10" /> 
+        <br/><br/>
+
+        <h4 class="font-italic">This is the percentage (or amount) of your costs for a covered hospital stay, after your deductible.</h4>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-9">
+                        <label>&nbsp</label>
+                        <input type="text" class="form-control" placeholder="please type your answer here" id="shareOfCostHospital">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>&nbsp</label>
+                        <select class="form-control" id="shareOfCostHospitalType">
+                        <option selected>$</option>
+                        <option>%</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Slide 11-->
+<div class="row " id="slide_11" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">What is your household’s annual cap on out-of pocket medical spending?</span> 
+        <img class="info-icon" href="#" data-toggle="modal" data-trigger="hover" data-target="#addInfoModal" data-slide="slide_11" /> 
+        <br/><br/>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                        <label>&nbsp</label>
+                        <input type="text" class="form-control" placeholder="please type your answer here" id="annualOop">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Slide 12-->
+<div class="row " id="slide_12" style="display:none">
+    <div class="col-md-12 text-center">
+        <span class="question-font">Want to hear more about single payer? Provide your email and we’ll send updates! </span>
+
+        <div class="row justify-content-md-center" style="margin-top:50px;margin-bottom: 50px;"> 
+            <div class="col-md-6 col-xs-12">
+                <div class="form-row no-highlight">
+                    <div class="form-group col-md-12">
+                        <label>&nbsp</label>
+                        <input type="text" class="form-control" placeholder="Your Email (optional)" id="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-italic">Is it ok if we save your answers (anonymously)?</h4>
+
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 col-sm-12 no-highlight" style="text-align: left;">
+                <div class="form-check">
+                    <input class="form-check-input" checked type="radio" name="userConsent" value="agree" id="">
+                    <label class="form-check-label" for="">
+                        I agree to allow my input data to be saved anonymously, to study single payer impact.
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="userConsent" value="disagree" id="">
+                    <label class="form-check-label" for="">
+                        No, I’d prefer that you not save this information.
+                    </label>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--progess button container-->
+<div id="progress_button_container" class="row"> 
+    <div class="col-md-6 col-sm-6"> <div class="btn cust-primary-btn" id="back_button" style="width: 140px; display: none;" onclick="back()">Back</div></div>
+    <div class="col-md-6 col-sm-6">
+         <div class="btn cust-warning-btn" id="next_button" style="float:right" onclick="next()">Next</div>
+         <div class="btn cust-success-btn" id="submit_buttom" style="float:right;display:none" onclick="handleSubmission()">Submit & Calculate</div>
+    </div>
+</div>
