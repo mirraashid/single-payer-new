@@ -179,4 +179,4 @@ if __name__ == '__main__':
 
 	firebase = pyrebase.initialize_app(creds.FIREBASE_CREDS)
 	db = firebase.database()
-	#app.run(debug=True)
+	app.run(debug=True)
