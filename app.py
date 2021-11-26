@@ -5,31 +5,13 @@ from termcolor import colored
 import constants as creds
 import pyrebase
 
-# from flask_sqlalchemy import SQLAlchemy
-# from sqlalchemy.sql import func
-
 
 app = Flask(__name__)
 api = Api(app)
 firebase = pyrebase.initialize_app(creds.FIREBASE_CREDS)
 db = firebase.database()
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1@localhost/singlepayer'
-# db = SQLAlchemy(app)
 
 
-#DB model for singlepayer user data
-# class User(db.Model):
-# 	__tablename__ = 'SPuserData'
-# 	id = db.Column(db.Integer, primary_key=True)
-# 	dateTime = db.Column(db.DateTime(timezone=True), default=func.now())
-# 	email = db.Column(db.String(120))
-# 	inputValues = db.Column(db.String(2500))
-# 	outputValues = db.Column(db.String(2500))
-    
-# 	def __init__(self, email, inputValues, outputValues):
-# 		self.email = email
-# 		self.inputValues = inputValues
-# 		self.outputValues = outputValues
 
 def getToken():
     #message_terminal("attempting to obtain token from MS servers")
@@ -163,12 +145,6 @@ class ProcessUserSubmission(Resource):
 #List application routes and their respective templates
 @app.route('/')
 def index():
-	# dbQuery = User('mirr1621@gmail.com', 'jkhsdbhjkasbd', 'sadsadasd')
-	# db.session.add(dbQuery);
-	# db.session.commit()
-	# if 'sessionId' not in session:
-	# 	session['sessionId'] = uuid.uuid1()
-	# 	print(session['sessionId'])
 	return render_template('index.html')
 
 
@@ -176,9 +152,6 @@ def index():
 api.add_resource(ProcessUserSubmission, '/singlePayer/fetch/calc')
 
 if __name__ == '__main__':
-	#app.secret_key = os.urandom(24)
-	# db.create_all()
-
 	# firebase = pyrebase.initialize_app(creds.FIREBASE_CREDS)
 	# db = firebase.database()
 	app.run(debug=True)
