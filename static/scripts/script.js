@@ -480,7 +480,7 @@ function option_highlighter() {
           name: 'Share of cost hospital',
           printId: 'ci_10',
           isVisible: true,
-          value: '$' + (payload.shareOfCostHospital * 1).toLocaleString(),
+          value: (payload.shareOfCostHospital * 1).toLocaleString(),
           unit: payload.shareOfCostHospitalType,
         },
         {
