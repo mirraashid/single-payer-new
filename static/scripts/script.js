@@ -430,7 +430,7 @@ function option_highlighter() {
         {
           name: 'Employer premium',
           printId: 'ci_3',
-          isVisible: !payload.epc === 'NA',
+          isVisible: !(payload.epc === 'NA'),
           value: '$' + (payload.epc * 1).toLocaleString(),
           unit: payload.epcTimeFrame,
         },
